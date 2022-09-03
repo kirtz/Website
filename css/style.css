@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties */
+
+:root {
+    --ff--title: 'Press Start 2P', sans-serif;
+    --ff--subtitile: 'Rubik Iso', sans-serif;
+    --ff--text: 'Namun Gothic Coding', sans-serif;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-ablue: #CBF3D2;
+    --clr-lblue: #b7c0ee;
+    --clr-vbcrayola: #7067CF;
+    --clr-mpurple: #7B287D;
+    --clr-dpruple: #330C2F;
+    
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+}
+
+@media (min-width: 800px){
+    :root {
+        --fs-h1: 4.5;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem; 
+    }
+}
+
+body{
+    background: var(--clr-light);
+}
