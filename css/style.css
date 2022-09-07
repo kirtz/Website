@@ -8,7 +8,7 @@
 
 :root {
     --ff--title: 'Press Start 2P', sans-serif;
-    --ff--subtitile: 'Rubik Iso', sans-serif;
+    --ff--subtitile: 'Michroma', sans-serif;
     --ff--text: 'Namun Gothic Coding', sans-serif;
 
     --fw-reg: 300;
@@ -26,6 +26,8 @@
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
 
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+          0.125em 0.125em 0.175em rgba(0,0,0,0.15);
 }
 
 @media (min-width: 800px){
@@ -41,10 +43,13 @@ body{
     background: var(--clr-dark);
     color: var(--clr-dpruple);
     margin: 0;
-
     font-family: var(--ff--text);
     font-size: var(--fs-body);
     line-height: 1,8;
+}
+
+section {
+    padding: 5em 2em;
 }
 
 img {
@@ -52,14 +57,130 @@ img {
     max-width: 100%;
 }
 
+strong { font-weight: var(--fw-bold);}
+
 /* Typography */
 h1,
 h2,
 h3{
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
 }
 
 h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+
+}
+
+.section__title--intro strong{
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size:var(--fs-h3)
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-vbcrayola);
+    padding: .25em 1em;
+    font-family: var(--ff--subtitile);
+    margin-bottom: 1em;
+}
+
+
+/* Header */
+
+nav{ display: none;}
+
+/* Intro section style */
+
+.intro {
+    position: relative;
+}
+
+.intro__img{
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px){
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtittle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro{
+    align-self: start;
+    grid-column: -1 / 1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+    }
+
+}
+
+/* Who i am */
+
+.who--i--am {
+    background-color:var(--clr-mpurple);
+    background-size: cover;
+    color: var(--clr-lblue);
+    text-align: center;
+}
+
+.section__title--who--i--am{
+    color: var(--clr-dpruple);
+    position: relative;
+    
+}
+
+.section__title--who--i--am::after{
+    content: '';
+    display: block;
+    width: 5em;
+    height: 0.5px;
+    margin: 0.25em auto 1em;
+    background: currentColor;
+    opacity: 0.5;
+}
+
+.who--i--am {
+    max-width: 3000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 800px){
+    .who--i--am {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .who--i--am + .who--i--am {
+        margin-left: 2em;
+    }
+}
