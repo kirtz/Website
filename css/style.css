@@ -59,6 +59,31 @@ img {
 
 strong { font-weight: var(--fw-bold);}
 
+:focus {
+    outline: 3px solid var(--clr-dpruple);
+    outline-offset: 3px;
+}
+
+/* Buttons*/
+
+.btn {
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-lblue);
+    color: var(--clr-mpurple);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--clr-dpruple);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
 /* Typography */
 h1,
 h2,
@@ -95,6 +120,13 @@ h3 { font-size: var(--fs-h3) }
     padding: .25em 1em;
     font-family: var(--ff--subtitile);
     margin-bottom: 1em;
+}
+
+
+.section__subtitle--projects {
+    color: var(--clr-lblue);
+    font-weight: bold;
+    margin-bottom: 2em;
 }
 
 
@@ -143,9 +175,11 @@ nav{ display: none;}
 
 }
 
-/* Who i am */
+/* Who i am background and spacing*/
 
 .who--i--am {
+    max-width: 1000px;
+    margin: 0 auto;
     background-color:var(--clr-mpurple);
     background-size: cover;
     color: var(--clr-lblue);
@@ -168,19 +202,67 @@ nav{ display: none;}
     opacity: 0.5;
 }
 
-.who--i--am {
-    max-width: 3000px;
-    margin: 0 auto;
+.Goals {
+    margin-bottom: 4em;
 }
 
-@media (min-width: 800px){
+/* Who i am Text */
+
+@media (min-width: 3000px){
     .who--i--am {
         display: flex;
         max-width: 1000px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .who--i--am + .who--i--am {
         margin-left: 2em;
     }
+}
+
+
+/* Portfolio backgound and spacing*/
+
+.projects {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--clr-mpurple);
+    color: var(--clr-dpruple);
+    text-align: center;
+}
+
+@media (min-width: 3000px){
+    .projects {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio__item {
+    background: var(--clr-mpurple);
+    overflow: hidden;
+}
+
+.portfolio__img{
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+
+.portfolio__item:focus{
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img{
+    transform: scale(1.5);
+    opacity: .75;
 }
